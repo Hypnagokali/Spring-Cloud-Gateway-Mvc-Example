@@ -1,0 +1,15 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: MyGateway
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id: frontend
+            uri: http://localhost:6060
+            predicates:
+              - Path=/frontend/**
+            filters:
+              - StripPrefix=1

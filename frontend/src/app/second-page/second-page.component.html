@@ -1,0 +1,15 @@
+<main style="padding:2rem; font-family:Inter, system-ui, sans-serif;">
+    <h2>Second Page</h2>
+    <p>This is the second page of the app.</p>
+
+    <button (click)="callApi()" [disabled]="loading" style="padding:0.5rem 1rem; margin-top:1rem;">
+    {{ loading ? 'Calling...' : 'Call API' }}
+    </button>
+
+    <div style="margin-top:1rem">
+    <div *ngIf="called !== null">called: {{ called }}</div>
+    <div *ngIf="error" style="color:crimson">Error: {{ error }}</div>
+    </div>
+
+    <p style="margin-top:1rem;"><a routerLink="/" style="color: #3b82f6; text-decoration: underline;">Go home</a></p>
+</main>
