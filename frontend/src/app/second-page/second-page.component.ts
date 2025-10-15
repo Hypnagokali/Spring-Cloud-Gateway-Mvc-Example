@@ -18,7 +18,7 @@ export class SecondPageComponent {
   callApi() {
     this.loading = true;
     this.error = null;
-    this.http.get<{ called: boolean }>('/frontend/some').subscribe({
+    this.http.get<{ called: boolean }>('http://localhost:6060/some').subscribe({
       next: (res) => {
         this.called = !!res.called;
         this.loading = false;
